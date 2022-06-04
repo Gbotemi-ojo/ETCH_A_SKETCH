@@ -43,18 +43,21 @@ for (let j = 1 ; j<=256 ; j++){
         }
     }
 }
+let contain = document.getElementById("container")
 function edit(){
+    clear()
     contained.style.display = "none"
     let askDimension = Number(prompt("enter dimension"))
-    let contain = document.getElementById("container")
-    contain.style.display = "flex"
 for (let i = 1 ; i<=askDimension * askDimension ; i++){
     let content = document.createElement("div"[i])
-    content.classList.add("colors")
+    content.style.display = "flex"
+    contain.style.display = "flex"
+     content.classList.toggle("colors")
     contain.appendChild(content)
     content.style.width = `calc(400px / ${askDimension})` 
     content.style.height = `calc(400px / ${askDimension})`
     content.addEventListener("mouseover", overthediv)
+    dimension.textContent = askDimension + " X " + askDimension
     function overthediv(){
         if(colorText.textContent === "BLUE"){
             content.style.background = "blue" 
@@ -77,5 +80,7 @@ for (let i = 1 ; i<=askDimension * askDimension ; i++){
     }
 }
 }
-
+function clear(){
+    contain.innerHTML = ""
+}
 
