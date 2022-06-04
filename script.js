@@ -44,7 +44,7 @@ for (let j = 1 ; j<=256 ; j++){
     }
 }
 function edit(){
-    content.innerHTML = ""
+
     contained.style.display = "none"
     let askDimension = Number(prompt("enter dimension"))
     let contain = document.getElementById("container")
