@@ -45,11 +45,7 @@ for (let j = 1 ; j<=256 ; j++){
 }
 let contain = document.getElementById("container")
 function edit(){
-<<<<<<< HEAD
     clear()
-=======
-
->>>>>>> 3a26dc026f826fc62b5f10977c189482bf3f21ec
     contained.style.display = "none"
     let askDimension = Number(prompt("enter dimension"))
 for (let i = 1 ; i<=askDimension * askDimension ; i++){
