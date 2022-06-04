@@ -1,41 +1,44 @@
-let contained = document.getElementById("defaultContainer")
-let colorText = document.getElementById("text")
+let defaultContainer = document.getElementById("defaultContainer")
+let divColor = document.getElementById("text")
 let dimension = document.getElementById("dimension")
+let container = document.getElementById("container")
+// functions for different kinds of colors
 function red(){
-    colorText.textContent = "RED"
+    divColor.textContent = "RED"
 }
 function yellow(){
-    colorText.textContent = "YELLOW"
+    divColor.textContent = "YELLOW"
 }
 function green(){
-    colorText.textContent = "GREEN"
+    divColor.textContent = "GREEN"
 }
 function blue(){
-    colorText.textContent = "BLUE"
+    divColor.textContent = "BLUE"
 }
 function eraser(){
-    colorText.textContent = "ERASER"
+    divColor.textContent = "ERASER"
 }
+
 for (let j = 1 ; j<=256 ; j++){ 
     let defaultContent = document.createElement("div"[j])
-    contained.appendChild(defaultContent)
+    defaultContainer.appendChild(defaultContent)
     defaultContent.style.width = "25px" 
     defaultContent.style.height = "25px"
-    defaultContent.addEventListener("mouseover", overthediv2)
-    function overthediv2(){
-        if(colorText.textContent === "BLUE"){
+    defaultContent.addEventListener("mouseover", hover)
+    function hover(){
+        if(divColor.textContent === "BLUE"){
             defaultContent.style.background = "blue" 
         }
-      else if(colorText.textContent === "RED"){
+      else if(divColor.textContent === "RED"){
             defaultContent.style.background = "red" 
         }
-        else if(colorText.textContent === "YELLOW"){
+        else if(divColor.textContent === "YELLOW"){
             defaultContent.style.background = "yellow" 
         }
-        else if(colorText.textContent === "GREEN"){
+        else if(divColor.textContent === "GREEN"){
             defaultContent.style.background = "green" 
         }
-       else if(colorText.textContent === "ERASER"){
+       else if(divColor.textContent === "ERASER"){
             defaultContent.style.background = "WHITE" 
         }
         else{
@@ -43,35 +46,34 @@ for (let j = 1 ; j<=256 ; j++){
         }
     }
 }
-let contain = document.getElementById("container")
 function edit(){
     clear()
-    contained.style.display = "none"
+    defaultContainer.style.display = "none"
     let askDimension = Number(prompt("enter dimension"))
 for (let i = 1 ; i<=askDimension * askDimension ; i++){
     let content = document.createElement("div"[i])
     content.style.display = "flex"
-    contain.style.display = "flex"
+    container.style.display = "flex"
      content.classList.toggle("colors")
-    contain.appendChild(content)
+    container.appendChild(content)
     content.style.width = `calc(400px / ${askDimension})` 
     content.style.height = `calc(400px / ${askDimension})`
-    content.addEventListener("mouseover", overthediv)
+    content.addEventListener("mouseover", hover)
     dimension.textContent = askDimension + " X " + askDimension
-    function overthediv(){
-        if(colorText.textContent === "BLUE"){
+    function hover(){
+        if(divColor.textContent === "BLUE"){
             content.style.background = "blue" 
         }
-      else if(colorText.textContent === "RED"){
+      else if(divColor.textContent === "RED"){
             content.style.background = "red" 
         }
-        else if(colorText.textContent === "YELLOW"){
+        else if(divColor.textContent === "YELLOW"){
             content.style.background = "yellow" 
         }
-        else if(colorText.textContent === "GREEN"){
+        else if(divColor.textContent === "GREEN"){
             content.style.background = "green" 
         }
-       else if(colorText.textContent === "ERASER"){
+       else if(divColor.textContent === "ERASER"){
             content.style.background = "WHITE" 
         }
         else{
@@ -81,6 +83,6 @@ for (let i = 1 ; i<=askDimension * askDimension ; i++){
 }
 }
 function clear(){
-    contain.innerHTML = ""
+    container.innerHTML = ""
 }
 

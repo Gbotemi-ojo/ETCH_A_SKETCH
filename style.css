@@ -21,7 +21,7 @@ body{
     width: 400px;
     border: 1px solid black;
 }
-#sketchEditor{
+#availableColors{
     display: flex;
     flex-wrap: wrap;
     border: 1px solid green;
@@ -30,7 +30,7 @@ body{
     margin-top: 10px;
     margin-left: 10vw;
 }
-#sketchEditor button{
+#availableColors button{
     width: 100px;
     border-radius: 5px;
     color: rgb(27, 25, 25);
